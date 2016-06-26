@@ -21,9 +21,9 @@ class SearchBar extends Component {
   onFormSubmit(event) {
     //Prevent form submission
     event.preventDefault();
-
+    const splitTerm = this.state.term.split(',');
     //Make a call to a weather API
-    this.props.fetchWeather(this.state.term);
+    this.props.fetchWeather(splitTerm[0],splitTerm[1]);
     this.setState({ term: ''});
   }
   render() {
